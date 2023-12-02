@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Weather.css";
 
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -68,25 +69,7 @@ export default function Weather(props) {
               </div>
             </div>
             <div className="col-8">
-              <div className="row justify-content-md-center">
-                <div className="col-sm-4">
-                  <div className="weatherForecastPreview p-3">
-                    <div className="forecast-day">day</div>
-                    <img
-                      src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
-                forecastDay.condition.icon
-              }.png"
-                      alt=""
-                      width="52px"
-                      height="52"
-                    />
-                    <div className="forecast-temperature">
-                      <span className="forecast-temperature-max">max°</span>
-                      <span className="forecast-temperature-min"> min</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <WeatherForecast />
             </div>
           </div>
         </div>
