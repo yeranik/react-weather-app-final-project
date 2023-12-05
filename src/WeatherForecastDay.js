@@ -18,12 +18,12 @@ export default function WeatherForecastDay(props) {
 
     return days[day];
   }
-
+  console.log(props);
   return (
     <div>
       <div className="forecast-day">{day()}</div>
       <img
-        src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/mist-night.png"
+        src={props.data.condition.icon_url}
         alt=""
         width="52px"
         height="52px"
