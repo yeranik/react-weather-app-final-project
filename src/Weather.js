@@ -43,33 +43,31 @@ export default function Weather(props) {
       <div className="container">
         <div className="weather-app">
           <div className="row">
-            <div className="col-4">
-              <WeatherInfo data={weatherData} />
-              <div className="row">
-                <form id="search-form" onSubmit={handleSubmit}>
-                  <div className="d-flex justify-content-center">
-                    <div className="d-inline-flex p-2">
-                      <input
-                        className="form-control form-control-sm"
-                        type="text"
-                        autoFocus="on"
-                        placeholder="Enter city"
-                        id="city"
-                        onChange={updateCity}
-                      />
+            <div className="col-sm-4">
+              <form id="search-form" onSubmit={handleSubmit}>
+                <div className="d-flex justify-content-center">
+                  <div className="d-inline-flex p-2">
+                    <input
+                      className="form-control form-control-sm"
+                      type="text"
+                      autoFocus="on"
+                      placeholder="Enter city"
+                      id="city"
+                      onChange={updateCity}
+                    />
 
-                      <input
-                        className="btn btn-primary btn-sm"
-                        type="submit"
-                        value="Search"
-                        id="search"
-                      />
-                    </div>
+                    <input
+                      className="btn btn-primary btn-sm"
+                      type="submit"
+                      value="Search"
+                      id="search"
+                    />
                   </div>
-                </form>
-              </div>
+                </div>
+              </form>
+              <WeatherInfo data={weatherData} />
             </div>
-            <div className="col-8">
+            <div className="col-sm-8">
               <WeatherForecast coordinates={weatherData.coordinates} />
             </div>
           </div>
